@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.imageeditor.ImageController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #05071F;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="overview" alignment="BASELINE_LEFT" disable="true" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" textFill="#e7e5e5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnMain" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Main">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnHistogram" alignment="BASELINE_LEFT" graphicTextGap="22.0" layoutX="10.0" layoutY="52.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Histogram">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+            <Button fx:id="btnSignout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Exit">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icons8_Sign_Out_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #02030A;">
+         <children>
+            <Pane fx:id="pnlMain" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="300.0" layoutX="30.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="300.0" />
+                  <ComboBox fx:id="selectImage" layoutX="322.0" layoutY="32.0" onMouseClicked="#pickImg" prefWidth="150.0" promptText="Select Image" />
+                  <ImageView fx:id="image" fitHeight="280.0" fitWidth="280.0" layoutX="40.0" layoutY="84.0" pickOnBounds="true" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="300.0" layoutX="426.0" layoutY="74.0" stroke="BLACK" strokeType="INSIDE" width="300.0" />
+                  <Button layoutX="30.0" layoutY="400.0" mnemonicParsing="false" onAction="#redImage" prefHeight="25.0" prefWidth="80.0" stylesheets="@style.css" text="Red Filter" />
+                  <Button layoutX="140.0" layoutY="400.0" mnemonicParsing="false" onAction="#greenImage" prefHeight="25.0" prefWidth="80.0" stylesheets="@style.css" text="Green Filter" />
+                  <Button layoutX="250.0" layoutY="400.0" mnemonicParsing="false" onAction="#blueImage" prefHeight="25.0" prefWidth="80.0" stylesheets="@style.css" text="Blue Filter" />
+                  <Button layoutX="30.0" layoutY="449.0" mnemonicParsing="false" onAction="#grayscale" prefHeight="25.0" prefWidth="80.0" stylesheets="@style.css" text="Grayscale" />
+                  <Slider fx:id="slider" blockIncrement="1.0" layoutX="426.0" layoutY="412.0" max="255.0" onMouseClicked="#imageBrightness" onMouseDragged="#imageBrightness" prefHeight="20.0" prefWidth="300.0" value="127.5" />
+                  <Text fill="WHITE" layoutX="425.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Brightness" />
+                  <Text fill="WHITE" layoutX="425.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saturation" />
+                  <Slider fx:id="slider1" blockIncrement="1.0" layoutX="427.0" layoutY="468.0" max="255.0" onMouseClicked="#imageSaturation" onMouseDragged="#imageSaturation" prefHeight="20.0" prefWidth="300.0" value="127.5" />
+                  <Button layoutX="140.0" layoutY="449.0" mnemonicParsing="false" onAction="#reset" prefHeight="25.0" prefWidth="80.0" stylesheets="@style.css" text="Reset" />
+                  <ImageView fx:id="editedImage" fitHeight="280.0" fitWidth="280.0" layoutX="436.0" layoutY="84.0" pickOnBounds="true" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlHistogram" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="300.0" layoutX="425.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="300.0" />
+                  <ImageView fx:id="hisImage" fitHeight="280.0" fitWidth="280.0" layoutX="435.0" layoutY="64.0" pickOnBounds="true" />
+                  <BarChart fx:id="barChart" layoutX="17.0" layoutY="25.0" prefHeight="358.0" prefWidth="380.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Button layoutX="59.0" layoutY="428.0" mnemonicParsing="false" onAction="#barChart" text="Generate BarChart" />
+               </children>
+            </Pane>
+         </children>
+      </StackPane>
+   </children>
+   <effect>
+      <DropShadow color="#1b1eeb" />
+   </effect>
+</AnchorPane>

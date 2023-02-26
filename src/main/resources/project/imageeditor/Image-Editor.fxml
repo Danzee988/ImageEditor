@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="170.0" layoutX="14.0" layoutY="148.0" stroke="BLACK" strokeType="INSIDE" width="170.0" />
+      <TextField fx:id="imgName" layoutX="14.0" layoutY="44.0" />
+      <Text layoutX="14.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image Name" />
+      <ImageView fx:id="oldImg" fitHeight="150.0" fitWidth="150.0" layoutX="24.0" layoutY="158.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="imgURL" layoutX="14.0" layoutY="97.0" />
+      <Text layoutX="14.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image URL" />
+   </children>
+</AnchorPane>
